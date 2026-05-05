@@ -1,0 +1,31 @@
+import claseobjetos1.*
+import plataformas.*
+
+describe "Tests para la clase objetos1" {
+
+  test "objetos1 tiene un nivel de presencialidad de 100 al incio, entocnes su reputacion es 20" {
+    assert.equals(20, objetos1.puntajeDeReputacion())
+  }
+
+  test "Si dicta una clase exitosamente usando Teletuvix, su nivel de presencialidad pasa a ser 240, y su reputación es 34 "{
+    objetos1.dictoClaseExitosa(teletuvix)
+    assert.equals(34, objetos1.puntajeDeReputacion())
+  }
+
+  test "Si luego además falla una clase con 40 estudiantes afectados, su nivel de presencialidad pasa a ser 230, y su reputación es 33"{
+    objetos1.dictoClaseExitosa(teletuvix)
+    objetos1.dictoClaseFallida(40)
+    assert.equals(32.66667, objetos1.puntajeDeReputacion())
+  }
+
+  test "Dicta una clase exitosa en radiogram, nivel de presencialidad es 245 y reputacion 34.5"{
+    objetos1.dictoClaseExitosa(radiogram)
+    assert.equals(34.5, objetos1.puntajeDeReputacion())
+  }
+
+  test "Luego falla una clase en radiogram, con 30 alumnos afectados, nivel de presencialidad pasa a 235 y reputacion 33.5 "{
+    objetos1.dictoClaseExitosa(radiogram)
+    objetos1.dictoClaseFallida(30)
+    assert.equals(33.5, objetos1.puntajeDeReputacion())
+  }
+}
